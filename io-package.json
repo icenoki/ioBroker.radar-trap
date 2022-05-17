@@ -1,0 +1,89 @@
+{
+  "common": {
+    "name": "radar-trap",
+    "version": "0.4.0",
+    "news": {
+      "0.4.0": {
+        "en": "update node packages",
+        "de": "node packages aktualisieren",
+        "ru": "обновить пакеты узла",
+        "pt": "atualizar pacotes de nós",
+        "nl": "update node-pakketten",
+        "fr": "mettre à jour les packages de nœuds",
+        "it": "aggiornare i pacchetti di nodi",
+        "es": "actualizar paquetes de nodos",
+        "pl": "zaktualizuj pakiety węzłów",
+        "zh-cn": "更新节点包"
+      }
+    },
+    "title": "Radar Trap",
+    "titleLang": {
+      "en": "Radar Trap",
+      "de": "Radarfalle",
+      "ru": "Радар-ловушка",
+      "pt": "Armadilha de radar",
+      "nl": "Radar Trap",
+      "fr": "Piège radar",
+      "it": "Radar Trap",
+      "es": "Trampa de radar",
+      "pl": "Pułapka radarowa",
+      "zh-cn": "雷达陷阱"
+    },
+    "desc": {
+      "en": "Radar Trap . . .",
+      "de": "Radarfalle . . .",
+      "ru": "Радар-ловушка . . .",
+      "pt": "Armadilha de radar . . .",
+      "nl": "Radar Trap . . .",
+      "fr": "Piège radar . . .",
+      "it": "Radar Trap . . .",
+      "es": "Trampa de radar . . .",
+      "pl": "Pułapka radarowa . . .",
+      "zh-cn": "雷达陷阱 . . ."
+    },
+    "authors": [
+      "Steiger04 <steiger04@posteo.de>"
+    ],
+    "keywords": [
+      "ioBroker",
+      "template",
+      "Smart Home",
+      "home automation"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "main": "main.js",
+    "icon": "radar-trap.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/Steiger04/ioBroker.radar-trap/master/admin/radar-trap.png",
+    "readme": "https://github.com/Steiger04/ioBroker.radar-trap/blob/master/README.md",
+    "loglevel": "info",
+    "restartAdapters": [
+      "vis"
+    ],
+    "mode": "daemon",
+    "singleton": true,
+    "type": "iot-systems",
+    "compact": true,
+    "connectionType": "cloud",
+    "dataSource": "poll",
+    "materialize": true,
+    "messagebox": true,
+    "dependencies": [
+      "vis",
+      {
+        "js-controller": ">=2.0.0"
+      }
+    ],
+    "adminUI": {
+      "config": "materialize"
+    }
+  },
+  "native": {
+    "mbxAccessToken": "",
+    "opencageId": "",
+    "feathersPort": 3030
+  },
+  "objects": [],
+  "instanceObjects": []
+}

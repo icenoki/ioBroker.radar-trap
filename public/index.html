@@ -1,0 +1,32 @@
+<html>
+<head>
+    <script>
+			let script = globalThis.document.createElement("script");
+			globalThis.registerSocketOnLoad = function(cb) {
+				globalThis.socketLoadedHandler = cb;
+			};
+
+			const parts = (globalThis.location.search || "").replace(/^\?/, "").split("&");
+			const query = {};
+
+			parts.forEach(item => {
+				const [name, val] = item.split("=");
+				query[decodeURIComponent(name)] = val !== undefined ? decodeURIComponent(val) : true;
+			});
+
+			script.onload = function() {
+				typeof globalThis.socketLoadedHandler === "function" && globalThis.socketLoadedHandler();
+			};
+
+			script.src = globalThis.location.port === "3000" ? globalThis.location.protocol + "//"
+				+ (query.host || globalThis.location.hostname)
+				+ ":" + (query.port || 8081) + "/lib/js/socket.io.js" : "%PUBLIC_URL%/../../../lib/js/socket.io.js";
+
+			globalThis.document.head.appendChild(script);
+    </script>
+</head>
+
+<body>
+<div id="root"></div>
+</body>
+</html>
