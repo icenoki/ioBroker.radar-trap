@@ -22,7 +22,7 @@ class RadarTrap extends utils.Adapter {
 		process.env["MBX_ACCESS_TOKEN"] = this.config.mbxAccessToken; // Muss in onReady direkt gesetzt werden
 		process.env["OPENCAGE_ID"] = this.config.opencageId; // Muss in onReady direkt gesetzt werden
 
-		const server = serverWithPort(this.config.feathersPort, this);
+		const server = await serverWithPort(this.config.feathersPort, this);
 
 		const routeService = server.service("routes");
 		const diretionServive = server.service("directions");
