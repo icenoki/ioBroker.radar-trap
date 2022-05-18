@@ -1,8 +1,20 @@
 {
   "common": {
     "name": "radar-trap",
-    "version": "0.4.0",
+    "version": "0.5.0",
     "news": {
+      "0.5.0": {
+        "en": "fixed https error",
+        "de": "https-Fehler behoben",
+        "ru": "исправлена ошибка https",
+        "pt": "erro de https corrigido",
+        "nl": "vaste https-fout",
+        "fr": "erreur https corrigée",
+        "it": "corretto errore https",
+        "es": "error fijo de https",
+        "pl": "naprawiony błąd https",
+        "zh-cn": "修复 https 错误"
+      },
       "0.4.0": {
         "en": "update node packages",
         "de": "node packages aktualisieren",

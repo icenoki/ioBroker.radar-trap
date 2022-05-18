@@ -118,5 +118,3 @@ $RECYCLE.BIN/
 # Others
 lib/
 data/
-server/certificates/
-server/mkcert/

@@ -38,7 +38,7 @@ class App extends GenericApp {
 
 	onConnectionReady() {
 		console.log("Here we are...");
-		const socket = io.connect(`http://${document.domain}:${this.savedNative["feathersPort"]}`);
+		const socket = io.connect(`https://${document.domain}:${this.savedNative["feathersPort"]}`);
 		// const socket = io.connect(`https://ibrtest.whew.synology.me:3030`);
 		this.client.configure(socketio(socket, {timeout: 120000}));
 

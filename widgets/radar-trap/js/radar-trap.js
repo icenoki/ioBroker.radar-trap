@@ -117,7 +117,7 @@ vis.binds["radar-trap"] = {
 
 				vis.binds["radar-trap"].native = {...res.rows[0].value.native};
 
-				const socket = io.connect(`http://${document.domain}:${vis.binds["radar-trap"].native.feathersPort}`);
+				const socket = io.connect(`https://${document.domain}:${vis.binds["radar-trap"].native.feathersPort}`);
 				// console.log("socket establised?", socket);
 
 				vis.binds["radar-trap"].feathersClient = feathers();

@@ -16,6 +16,9 @@
 A detailed description will be provided with the beta version.
 
 ## Changelog
+### 0.5.0 (2022-05-18)
+* fixed https error
+
 ### 0.4.0 (2022-05-13)
 * initial release
 
