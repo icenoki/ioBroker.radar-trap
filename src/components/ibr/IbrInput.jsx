@@ -18,17 +18,25 @@ class IbrInput extends Component {
 	render() {
 		const {classes} = this.props;
 		const {native, updateNativeValue} = this.context;
-		const {attr, type, title} = this.props;
+		const {attr, type, title, disabled} = this.props;
 
 		return (
 			<TextField
+				disabled={disabled || false}
 				className={classes.textField}
 				label={I18n.t(title)}
 				fullWidth
 				variant="filled"
 				value={native[attr]}
 				type={type || "text"}
-				onChange={(e) => updateNativeValue(attr, e.target.value)}
+				onChange={(e) => {
+					if (type === "number") {
+						updateNativeValue(attr, Number(e.target.value));
+					} else {
+						updateNativeValue(attr, e.target.value);
+					}
+
+				}}
 				margin="dense"
 			/>
 		);

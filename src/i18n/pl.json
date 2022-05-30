@@ -31,5 +31,6 @@
     "ferry": "prom",
     "motorway": "Autostrada",
     "name for the starting point": "nazwa punktu wyjścia",
-    "name for the target point": "nazwa punktu docelowego"
+    "name for the target point": "nazwa punktu docelowego",
+    "domains": "domeny"
 }

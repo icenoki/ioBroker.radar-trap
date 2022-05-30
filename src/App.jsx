@@ -1,4 +1,4 @@
-import React, {createContext} from "react";
+import React, {createContext, useContext} from "react";
 import "mapbox-gl/dist/mapbox-gl.css";
 import GenericApp from "@iobroker/adapter-react/GenericApp";
 import {withStyles} from "@material-ui/core/styles";
@@ -37,10 +37,17 @@ class App extends GenericApp {
 	}
 
 	onConnectionReady() {
-		console.log("Here we are...");
-		const socket = io.connect(`https://${document.domain}:${this.savedNative["feathersPort"]}`);
+		// console.log("Here we are...");
+		// const socket = io.connect(`http://${document.domain}:${this.savedNative["feathersPort"]}`);
 		// const socket = io.connect(`https://ibrtest.whew.synology.me:3030`);
-		this.client.configure(socketio(socket, {timeout: 120000}));
+
+		if (this.savedNative["httpsEnabled"] === true) {
+			const socket = io.connect(`https://${document.domain}:${this.savedNative["feathersPort"]}`, {rejectUnauthorized: false});
+			this.client.configure(socketio(socket, {timeout: 120000}));
+		} else {
+			const socket = io.connect(`http://${document.domain}:${this.savedNative["feathersPort"]}`, {rejectUnauthorized: false});
+			this.client.configure(socketio(socket, {timeout: 120000}));
+		}
 
 		this.socket.subscribeState("*.timer", false, (id, state) => {
 			if (state === null) {
@@ -52,6 +59,14 @@ class App extends GenericApp {
 				this.setState({renewTimer: {...this.state.renewTimer, ...{[routeId]: state.val}}});
 			}
 		});
+	}
+
+	onSave(isClose) {
+		if (this.savedNative.httpsEnabled === this.state.native.httpsEnabled && this.savedNative.feathersPort === this.state.native.feathersPort) {
+			super.onSave(isClose);
+		} else {
+			super.onSave(true);
+		}
 	}
 
 	componentDidMount() {
@@ -91,3 +106,4 @@ class App extends GenericApp {
 
 export default withStyles(styles)(App);
 export {NativeContext};
+export const useNativeContext = () => useContext(NativeContext);

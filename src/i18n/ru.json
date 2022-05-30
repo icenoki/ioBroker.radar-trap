@@ -31,5 +31,6 @@
     "ferry": "перевозить",
     "motorway": "автомагистраль",
     "name for the starting point": "название отправной точки",
-    "name for the target point": "название целевой точки"
+    "name for the target point": "название целевой точки",
+    "domains": "домены"
 }

@@ -31,5 +31,6 @@
     "ferry": "traghetto",
     "motorway": "autostrada",
     "name for the starting point": "nome per il punto di partenza",
-    "name for the target point": "nome per il punto di destinazione"
+    "name for the target point": "nome per il punto di destinazione",
+    "domains": "domini"
 }

@@ -31,5 +31,6 @@
     "ferry": "veerboot",
     "motorway": "snelweg",
     "name for the starting point": "naam voor het startpunt",
-    "name for the target point": "naam voor het richtpunt"
+    "name for the target point": "naam voor het richtpunt",
+    "domains": "domeinen"
 }

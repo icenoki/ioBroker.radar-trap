@@ -31,5 +31,6 @@
     "ferry": "traversier",
     "motorway": "autoroute",
     "name for the starting point": "nom du point de départ",
-    "name for the target point": "nom du point cible"
+    "name for the target point": "nom du point cible",
+    "domains": "domaines"
 }

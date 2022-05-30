@@ -30,5 +30,6 @@
     "ferry": "ferry",
     "motorway": "motorway",
     "name for the starting point": "name for the starting point",
-    "name for the target point": "name for the target point"
+    "name for the target point": "name for the target point",
+    "domains": "domains"
 }

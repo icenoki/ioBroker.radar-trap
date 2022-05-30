@@ -12,6 +12,16 @@ import {useFind} from "figbird";
 import {easeCubic} from "d3-ease";
 import {NativeContext} from "../App";
 
+import iconFixedTrap from "../assets/map-icons/icon-fixed-trap.png";
+import iconAccident from "../assets/map-icons/icon-accident.png";
+import iconFog from "../assets/map-icons/icon-fog.png";
+import iconMobileTrap from "../assets/map-icons/icon-mobile-trap.png";
+import iconObject from "../assets/map-icons/icon-object.png";
+import iconRoadWork from "../assets/map-icons/icon-road-work.png";
+import iconSleekness from "../assets/map-icons/icon-sleekness.png";
+import iconTrafficJam from "../assets/map-icons/icon-traffic-jam.png";
+import iconWrongWayDriver from "../assets/map-icons/icon-wrong-way-driver.png";
+
 const styles = (_theme) => ({});
 
 function isArray(it) {
@@ -81,7 +91,7 @@ function TrapMap() {
 		};
 	}, [resetViewport, setViewport]);
 
-	useEffect(() => {
+	/*useEffect(() => {
 		[
 			"icon-fixed-trap",
 			"icon-mobile-trap",
@@ -98,6 +108,28 @@ function TrapMap() {
 					if (error) throw error;
 
 					mapRef.current.getMap().addImage(image, mapimage, {"sdf": true});
+				});
+			}
+		});
+	}, [mapRef]);*/
+
+	useEffect(() => {
+		[
+			{id: "icon-fixed-trap", png: iconFixedTrap},
+			{id: "icon-mobile-trap", png: iconMobileTrap},
+			{id: "icon-traffic-jam", png: iconTrafficJam},
+			{id: "icon-road-work", png: iconRoadWork},
+			{id: "icon-accident", png: iconAccident},
+			{id: "icon-object", png: iconObject},
+			{id: "icon-sleekness", png: iconSleekness},
+			{id: "icon-fog", png: iconFog},
+			{id: "icon-wrong-way-driver", png: iconWrongWayDriver},
+		].forEach(image => {
+			if (!mapRef.current.getMap().hasImage(image.id)) {
+				mapRef.current.getMap().loadImage(image.png, (error, mapimage) => {
+					if (error) throw error;
+
+					mapRef.current.getMap().addImage(image.id, mapimage, {"sdf": true});
 				});
 			}
 		});

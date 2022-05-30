@@ -1,20 +1,22 @@
 {
   "files": {
-    "main.js": "/adapter/radar-trap/static/js/main.19b97769.chunk.js",
-    "main.js.map": "/adapter/radar-trap/static/js/main.19b97769.chunk.js.map",
+    "main.js": "/adapter/radar-trap/static/js/main.bd7086db.chunk.js",
+    "main.js.map": "/adapter/radar-trap/static/js/main.bd7086db.chunk.js.map",
     "runtime-main.js": "/adapter/radar-trap/static/js/runtime-main.ff49fe11.js",
     "runtime-main.js.map": "/adapter/radar-trap/static/js/runtime-main.ff49fe11.js.map",
     "static/css/2.e17cb2cc.chunk.css": "/adapter/radar-trap/static/css/2.e17cb2cc.chunk.css",
-    "static/js/2.5a6dc83d.chunk.js": "/adapter/radar-trap/static/js/2.5a6dc83d.chunk.js",
-    "static/js/2.5a6dc83d.chunk.js.map": "/adapter/radar-trap/static/js/2.5a6dc83d.chunk.js.map",
+    "static/js/2.c21f6924.chunk.js": "/adapter/radar-trap/static/js/2.c21f6924.chunk.js",
+    "static/js/2.c21f6924.chunk.js.map": "/adapter/radar-trap/static/js/2.c21f6924.chunk.js.map",
     "index.html": "/adapter/radar-trap/index.html",
     "static/css/2.e17cb2cc.chunk.css.map": "/adapter/radar-trap/static/css/2.e17cb2cc.chunk.css.map",
-    "static/js/2.5a6dc83d.chunk.js.LICENSE.txt": "/adapter/radar-trap/static/js/2.5a6dc83d.chunk.js.LICENSE.txt"
+    "static/js/2.c21f6924.chunk.js.LICENSE.txt": "/adapter/radar-trap/static/js/2.c21f6924.chunk.js.LICENSE.txt",
+    "static/media/icon-accident.5977639e.png": "/adapter/radar-trap/static/media/icon-accident.5977639e.png",
+    "static/media/icon-traffic-jam.86e4d870.png": "/adapter/radar-trap/static/media/icon-traffic-jam.86e4d870.png"
   },
   "entrypoints": [
     "static/js/runtime-main.ff49fe11.js",
     "static/css/2.e17cb2cc.chunk.css",
-    "static/js/2.5a6dc83d.chunk.js",
-    "static/js/main.19b97769.chunk.js"
+    "static/js/2.c21f6924.chunk.js",
+    "static/js/main.bd7086db.chunk.js"
   ]
 }

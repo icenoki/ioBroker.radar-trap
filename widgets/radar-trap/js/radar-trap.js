@@ -93,11 +93,11 @@ vis.binds["radar-trap"] = {
 	selectRouteId: function(widAttr) {
 		// console.log("WIDATTR", widAttr);
 		return vis.editSelect(widAttr, [
-			"",
-			...Object.entries(vis.objects)
-				.filter(([key, val]) => key.split(".")[0] === "radar-trap" && val.type === "device")
-				.map(([, value]) => value.common.name + " | " + value.native.routeId)],
-		true);
+				"",
+				...Object.entries(vis.objects)
+					.filter(([key, val]) => key.split(".")[0] === "radar-trap" && val.type === "device")
+					.map(([, value]) => value.common.name + " | " + value.native.routeId)],
+			true);
 	},
 	initRadarTrap: function() {
 		// console.log("INITFEATHERSCLIENT", vis);
@@ -114,11 +114,14 @@ vis.binds["radar-trap"] = {
 			function(err, res) {
 				// console.log("objectView Error", err);
 				// console.log("objectView", res);
-
 				vis.binds["radar-trap"].native = {...res.rows[0].value.native};
 
-				const socket = io.connect(`https://${document.domain}:${vis.binds["radar-trap"].native.feathersPort}`);
-				// console.log("socket establised?", socket);
+				let socket;
+				if (vis.binds["radar-trap"].native.httpsEnabled === true) {
+					socket = io.connect(`https://${document.domain}:${vis.binds["radar-trap"].native.feathersPort}`, {rejectUnauthorized: false});
+				} else {
+					socket = io.connect(`http://${document.domain}:${vis.binds["radar-trap"].native.feathersPort}`, {rejectUnauthorized: false});
+				}
 
 				vis.binds["radar-trap"].feathersClient = feathers();
 				vis.binds["radar-trap"].feathersClient.configure(feathers.socketio(socket));
@@ -242,9 +245,9 @@ vis.binds["radar-trap"] = {
 
 			let doFit = true;
 			map.on("resize", () => {
-				if(doFit) {
+				if (doFit) {
 					const directionLine = $mapbox.data("direction") && turf.feature($mapbox.data("direction").directionLine);
-					if(directionLine) {
+					if (directionLine) {
 						map.fitBounds(turf.bbox(directionLine), {padding: 20});
 					} else {
 						map.fitBounds([[4.751874, 47.202310], [15.306672, 55.984171]]);

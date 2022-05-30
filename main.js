@@ -2,6 +2,8 @@ const Timeout = require("smart-timeout");
 const utils = require("@iobroker/adapter-core");
 const serverWithPort = require("./server/serverWithPort");
 
+// const {tools} = require("@iobroker/js-controller-common");
+
 class RadarTrap extends utils.Adapter {
 	constructor(options) {
 		super({
@@ -19,10 +21,13 @@ class RadarTrap extends utils.Adapter {
 	}
 
 	async onReady() {
+		// const certificates = tools.generateDefaultCertificates();
+		// console.log("certificates", certificates);
+
 		process.env["MBX_ACCESS_TOKEN"] = this.config.mbxAccessToken; // Muss in onReady direkt gesetzt werden
 		process.env["OPENCAGE_ID"] = this.config.opencageId; // Muss in onReady direkt gesetzt werden
 
-		const server = await serverWithPort(this.config.feathersPort, this);
+		const server = await serverWithPort(this);
 
 		const routeService = server.service("routes");
 		const diretionServive = server.service("directions");

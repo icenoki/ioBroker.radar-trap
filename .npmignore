@@ -20,3 +20,5 @@ package-lock.json
 
 # maintenance scripts
 maintenance/**
+
+server/certificates/*.pem

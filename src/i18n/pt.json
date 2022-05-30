@@ -31,5 +31,6 @@
     "ferry": "balsa",
     "motorway": "autoestrada",
     "name for the starting point": "nome para o ponto de partida",
-    "name for the target point": "nome para o ponto alvo"
+    "name for the target point": "nome para o ponto alvo",
+    "domains": "domínios"
 }
