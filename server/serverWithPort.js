@@ -85,6 +85,16 @@ const createCertificatesIfRequired = async (that) => {
       // obj.native.certificates.radarTrapCA = ca.cert;
       await that.setForeignObjectAsync(obj._id, obj);
 
+      try {
+        const certificatePath = path.resolve("server", "certificates");
+
+        if (!fs.existsSync(certificatePath)) {
+          fs.mkdirSync(certificatePath);
+        }
+      } catch (err) {
+        that.log.error(err);
+      }
+
       const caPath = path.resolve("server", "certificates", "radarTrapCA.pem");
       fs.writeFileSync(caPath, ca.cert);
       that.log.info("radarTrapCA was generated.");
